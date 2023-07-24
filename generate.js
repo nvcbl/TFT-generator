@@ -6,7 +6,7 @@
 // NOTES:
 // 1. I would not recommend using this for a turret with Cannons since the bullet drop compensation FT is terrible
 
-// ADD PARAMS HERE
+// PARAMETERS
 
 // How fast your bullets go in m/s
 const BULLET_SPEED = 1250
