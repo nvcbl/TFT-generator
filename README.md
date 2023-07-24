@@ -11,4 +11,4 @@ Needs NodeJS.
 ## How it works
 1. Converts the `TargetDistance`, `TargetElevation`, and `TargetHeading` (this one is relative to the plane's heading) Variables into X, Y and Z Coordinates.
 2. Rotates the X, Y and Z Coordinates by first your Pitch angle then your Roll angle.
-3. Converts those rotated XYZ Coordinates back into an Rlevation angle and an Azimuth angle your turrets can use.
+3. Converts those rotated XYZ Coordinates back into an Elevation angle and an Azimuth angle your turrets can use.
