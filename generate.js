@@ -11,7 +11,7 @@
 // How fast your bullets go in m/s
 const BULLET_SPEED = 1250
 // Whether you're firing out shells or bullets ('true' if shells, 'false' for bullets)
-const HAS_BULLET_DROP = true
+const HAS_BULLET_DROP = false
 // The X position of your turret in meters (right is positive, relative to your main cockpit)
 const TURRET_X = 0;
 // The Y position of your turret in meters (up is positive, relative to your main cockpit)
