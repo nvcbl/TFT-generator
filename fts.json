@@ -1,0 +1,21 @@
+{
+    "targets": {
+        "t_rhead": "atan2(t_fx, t_fz)",
+        "t_relev": "asin(t_fy / sqrt(pow(t_fx, 2) + pow(t_fy, 2) + pow(t_fz, 2)))"
+    },
+    "source": {
+        "t_head": "repeat((TargetHeading - Heading) + rate(TargetHeading) * (TargetDistance / GUN_SPEED)  + 180, 360) - 180",
+        "t_elev": "TargetElevation + rate(TargetElevation) * (TargetDistance / GUN_SPEED)",
+        "t_x": "TargetDistance * cos(t_elev) * sin(t_head) - TUR_X",
+        "t_y": "TargetDistance * sin(t_elev) - TUR_Y",
+        "t_z": "TargetDistance * cos(t_elev) * cos(t_head) - TUR_Z",
+        "t_fz": "t_z * cos(-PitchAngle) - t_y * sin(-PitchAngle)",
+        "t_py": "t_y * cos(-PitchAngle) + t_z * sin(-PitchAngle)",
+        "t_fx": "t_x * cos(-RollAngle) - t_py * sin(-RollAngle)",
+        "t_fy": "t_py * cos(-RollAngle) + t_x * sin(-RollAngle)"
+    },
+    "extras": {
+        "t_travtime": "TargetSelected ? TargetDistance / GUN_SPEED : 0",
+        "t_bdc": "atan2(9.81 * pow(TargetDistance * cos(TargetElevation) / GUN_SPEED, 2) / 2 , TargetDistance * cos(TargetElevation))"
+    }
+}
