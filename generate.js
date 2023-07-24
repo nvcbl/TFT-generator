@@ -12,11 +12,11 @@
 const BULLET_SPEED = 1250
 // Whether you're firing out shells or bullets ('true' if shells, 'false' for bullets)
 const HAS_BULLET_DROP = true
-// The X position of your turret in meters (right is positive)
+// The X position of your turret in meters (right is positive, relative to your main cockpit)
 const TURRET_X = 0;
-// The Y position of your turret in meters (up is positive)
+// The Y position of your turret in meters (up is positive, relative to your main cockpit)
 const TURRET_Y = 0;
-// The Z position of your turret in meters (forward is positive)
+// The Z position of your turret in meters (forward is positive, relative to your main cockpit)
 const TURRET_Z = 0;
 
 // DO NOT MOD EVERYTHING PAST HERE UNLESS YOU KNOW WHAT YOU ARE DOING
@@ -65,7 +65,7 @@ function compileFTs(srcs, tgts) {
     for (const tName in tgts) {
         let tCode = tgts[tName];
         let oldCode = "";
-    
+
         do {
             oldCode = tCode
             for (const sName in srcs) {
@@ -82,7 +82,7 @@ const generated = generateFTs(BULLET_SPEED, HAS_BULLET_DROP);
 const out = compileFTs(generated.sources, generated.targets);
 
 fs.writeFileSync("out.txt",
-`---- Turret Elevation ----
+    `---- Turret Elevation ----
 ${out.t_relev}
 ---- Turret Turning ----
 ${out.t_rhead}
